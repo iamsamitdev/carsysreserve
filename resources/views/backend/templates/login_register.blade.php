@@ -6,7 +6,7 @@
 <body>
 
         <section id="wrapper">
-                <div class="login-register" style="background-image:url({{asset('assets/images/background/login-register.jpg')}})">
+                <div class="login-register" style="background-image:url({{asset('assets/images/background/cargg.jpg')}})">
                     @yield('content')
                 </div>
         </section>

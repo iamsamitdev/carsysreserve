@@ -28,3 +28,4 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 */
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('admin/routes', 'HomeController@admin')->middleware('admin');
