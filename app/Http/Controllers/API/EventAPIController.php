@@ -18,7 +18,7 @@ class EventAPIController extends APIBaseController
      */
     public function index()
     {
-        $events = Event::all();
+        $events = Event::all(['id','title','description','start','end']);
         return $this->sendResponse($events->toArray(), "Events retrived successfully.");
     }
 
