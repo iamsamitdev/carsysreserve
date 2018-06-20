@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class BackendController extends Controller
 {
+
+    public function index(){
+        return redirect('backend/dashboard');
+    }
+
     public function dashboard()
     {
         return view('backend.pages.dashboard');

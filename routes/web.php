@@ -11,6 +11,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('backend','BackendController@index');
 
 /*
 |--------------------------------------------------------------------------
