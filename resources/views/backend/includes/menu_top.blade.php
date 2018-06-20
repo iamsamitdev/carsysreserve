@@ -158,8 +158,18 @@
                                             <div class="dw-user-box">
                                                 <div class="u-img"><img src="../assets/images/users/1.jpg" alt="user"></div>
                                                 <div class="u-text">
-                                                    <h4>Johny Doe</h4>
-                                                    <p class="text-muted">johndy@gmail.com</p><a href="#" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+                                                    <h4>{{Auth::user()->fullname}}</h4>
+                                                    <p class="text-muted">{{ Auth::user()->email }}</p>
+                                                    <a href="#" class="btn btn-rounded btn-danger btn-sm">
+
+                                                        @if(Auth::user()->isAdmin == 1)
+                                                            ผู้ดูแลระบบ
+                                                        @else
+                                                            ผู้ใช้งานทั่วไป
+                                                        @endif
+                                                        
+                                                    </a>
+                                                </div>
                                             </div>
                                         </li>
                                         <li role="separator" class="divider"></li>
@@ -169,7 +179,13 @@
                                         <li role="separator" class="divider"></li>
                                         <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
                                         <li role="separator" class="divider"></li>
-                                        <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                        <li>
+                                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();"><i class="fa fa-power-off"></i> Logout</a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="post" style="display: none;">
+                                                    @csrf
+                                            </form>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>

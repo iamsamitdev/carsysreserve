@@ -18,4 +18,14 @@ class BackendController extends Controller
     public function register(){
         return view('backend.pages.register');
     }
+
+    public function nopermission()
+    {
+        return view('backend.pages.nopermission');
+    }
+
+    public function department()
+    {
+        return "This is admin area only";
+    }
 }

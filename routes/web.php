@@ -1,30 +1,40 @@
 <?php
+/*
+|--------------------------------------------------------------------------
+| Frontend
+|--------------------------------------------------------------------------
+|
+*/
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('backend/dashboard','BackendController@dashboard');
-Route::get('backend/login','BackendController@login');
-Route::get('backend/register','BackendController@register');
-
 Auth::routes();
 
-// Authentication Routes
 /*
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login');
-Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-
-// Registration Routes...
-Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('register', 'Auth\RegisterController@register');
-
-// Password Reset Routes...
-Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+|--------------------------------------------------------------------------
+| Backend
+|--------------------------------------------------------------------------
+|
 */
+Route::group([
+    'prefix' => 'backend', 
+    'middleware' => 'auth'
+], function(){
+     // Normal User
+     Route::get('dashboard','BackendController@dashboard');
+     Route::get('nopermission','BackendController@nopermission'); // หน้าแจ้งเตือนกรณี สิทธิ์ไม่ถูกต้อง หากพยายมเข้าหน้า admin page
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group([
+    'prefix' => 'backend', 
+    'middleware' => 'admin'
+], function(){
+     // Admin User
+     Route::get('department','BackendController@department');
+});
+
+//Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('admin/area','HomeController@admin')->middleware('admin');

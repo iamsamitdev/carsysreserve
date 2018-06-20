@@ -8,15 +8,6 @@
                     <div class="user-profile" style="background: url(../assets/images/background/user-info.jpg) no-repeat;">
                         <!-- User profile image -->
                         <div class="profile-img"> <img src="../assets/images/users/profile.png"  alt="user" /> </div>
-                        <!-- User profile text-->
-                        <div class="profile-text"> <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Jonhy Doe</a>
-                            <div class="dropdown-menu animated flipInY">
-                                <a href="#" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
-                                <a href="#" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a>
-                                <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"><i class="ti-settings"></i> Account Setting</a>
-                                <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
-                            </div>
-                        </div>
                     </div>
                     <!-- End User profile text-->
                     <!-- Sidebar navigation-->
@@ -47,6 +38,7 @@
                                 </ul>
                             </li>
                             
+                            @if(Auth::user()->isAdmin == 1)
                             <li class="nav-devider"></li>
                             <li class="nav-small-cap">ส่วนของผู้ดูแลระบบ</li>
                             <li>
@@ -82,6 +74,7 @@
                                     <li><a href="#">การชำระค่างวด</a></li>
                                 </ul>
                             </li>
+                            @endif
                         </ul>
                     </nav>
                     <!-- End Sidebar navigation -->
