@@ -20,7 +20,8 @@
     <script src="{{asset('assets/plugins/calendar/jquery-ui.min.js')}}"></script>
     <script src="{{asset('assets/plugins/moment/moment.js')}}"></script>
     <script src="{{asset('assets/plugins/calendar/dist/fullcalendar.min.js')}}"></script>
-    <script src="{{asset('assets/plugins/calendar/dist/cal-init.js')}}"></script>
+    {{-- <script src="{{asset('assets/plugins/calendar/dist/cal-init.js')}}"></script> --}}
+    <script src="{{asset('assets/js/manage-calendar.js')}}"></script>
 
     <!-- ============================================================== -->
     <!-- Style switcher -->
