@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class BackendController extends Controller
 {
+    public function index()
+    {
+        return redirect('backend/dashboard');
+    }
+
     public function dashboard()
     {
         return view('backend.pages.dashboard');
@@ -27,5 +32,20 @@ class BackendController extends Controller
     public function department()
     {
         return "This is admin area only";
+    }
+
+    public function calendars()
+    {
+        return view('backend.pages.calendars');
+    }
+
+    public function bookings()
+    {
+        return view('backend.pages.bookings');
+    }
+
+    public function cardetails()
+    {
+        return view('backend.pages.cardetails');
     }
 }

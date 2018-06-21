@@ -21,6 +21,8 @@
     <script src="{{asset('assets/plugins/moment/moment.js')}}"></script>
     <script src="{{asset('assets/plugins/calendar/dist/fullcalendar.min.js')}}"></script>
     {{-- <script src="{{asset('assets/plugins/calendar/dist/cal-init.js')}}"></script> --}}
+    <script src="{{asset('assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js')}}"></script>
+  
     <script src="{{asset('assets/js/manage-calendar.js')}}"></script>
 
     <!-- ============================================================== -->

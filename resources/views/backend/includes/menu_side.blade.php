@@ -17,9 +17,9 @@
                             <li>
                                 <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">หน้าหลัก</span></a>
                                 <ul aria-expanded="false" class="collapse">
-                                    <li><a href="#">ปฎิทินการใช้รถ</a></li>
-                                    <li><a href="#">ดูรายรายการจอง</a></li>
-                                    <li><a href="#">รายละเอียดรถ</a></li>
+                                    <li><a href="{{url('backend/calendars')}}">ปฎิทินการใช้รถ</a></li>
+                                    <li><a href="{{url('backend/bookings')}}">ดูรายรายการจอง</a></li>
+                                    <li><a href="{{url('backend/cardetails')}}">รายละเอียดรถ</a></li>
                                 </ul>
                             </li>
                             <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-laptop-windows"></i><span class="hide-menu">ข้อมูลพื้นฐาน</span></a>

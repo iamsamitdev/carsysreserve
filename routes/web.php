@@ -11,13 +11,14 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::get('backend','BackendController@index');
 /*
 |--------------------------------------------------------------------------
 | Backend
 |--------------------------------------------------------------------------
 |
 */
+// *** USER ****/
 Route::group([
     'prefix' => 'backend', 
     'middleware' => 'auth'
@@ -25,9 +26,13 @@ Route::group([
      // Normal User
      Route::get('dashboard','BackendController@dashboard');
      Route::get('nopermission','BackendController@nopermission'); // หน้าแจ้งเตือนกรณี สิทธิ์ไม่ถูกต้อง หากพยายมเข้าหน้า admin page
+     Route::get('calendars','BackendController@calendars');
+     Route::get('bookings','BackendController@bookings');
+     Route::get('cardetails','BackendController@cardetails');
 });
 
 
+// *** ADMIN****/
 Route::group([
     'prefix' => 'backend', 
     'middleware' => 'admin'

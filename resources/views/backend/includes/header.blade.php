@@ -12,6 +12,9 @@
 <!-- Calendar CSS -->
 <link href="{{asset('assets/plugins/calendar/dist/fullcalendar.css')}}" rel="stylesheet" />
 
+<!-- Date time picker CSS-->
+<link href="{{asset('assets/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css')}}" rel="stylesheet">
+
 <!-- Custom CSS -->
 <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
 <!-- You can change the theme colors from here -->
