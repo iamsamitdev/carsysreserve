@@ -1,6 +1,7 @@
 $(function(){
 
     var baseAPIURL = "http://car-reserve.site/api/";
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjJkMmFkZjczMjE0NGYxNGIwZDNlYjQ2MTJjNDkwMTI0ZWRkNmY3ZDI4YzZlZmM2NmI2ZGFiYWQ4MjVlNGZkNTRlZjllYWI2ZTVmNmE1MDk2In0.eyJhdWQiOiIxIiwianRpIjoiMmQyYWRmNzMyMTQ0ZjE0YjBkM2ViNDYxMmM0OTAxMjRlZGQ2ZjdkMjhjNmVmYzY2YjZkYWJhZDgyNWU0ZmQ1NGVmOWVhYjZlNWY2YTUwOTYiLCJpYXQiOjE1Mjk2MzYzMjQsIm5iZiI6MTUyOTYzNjMyNCwiZXhwIjoxNTYxMTcyMzI0LCJzdWIiOiI5Iiwic2NvcGVzIjpbXX0.R_To5uZvzcbNDHF4hIDxTx6hj286fnp_FY7lWy2Ms_6E8EJktC4w2no1w02zkJ07QC7wXHTDLqhrhjKrWmho4b9QUP2Kt-utIsozXhnNrvxAJEKB-dgX1v6azqguerUsidIIapX0kh4RB3sCoXVuUdh8RBMlhSUaTNvnlIFvW3HmyJAhlRtgv7juJVYnwIgS0WY1NKnHAQIRjwD_pnnkdgPSuDaQ1FXpmCggOxYMI6yaZUuyjlyky9apamOHXEbBQPgekSLmp7Bh-AXb76TLkzT-Bj28WNzZljPpxiDxPcAgmtBVBiBfcMvbTIFkhBu23KxVwACN-GHB46kbZZi7YJVJvF0b4Tf73C9h0jTrNo83-fsC5APjet1bLdK-APVuu_hZtdxXC6OCH5YY9LUkLrbU8KMfKFdUC3r7Nt6a9qJLIIhlEGqsMRhW_f0n6QAiIr5jCZz8cTCxUmq17EyknWMpPROuXjUByvtuHRvkyQfJ77vkhdL8wusp_i_1aZknNAV8oTyoxjxhlc8WZtRGyjXLEHMoFeKQs8lRlsnxPXNgMthVOsEaS8ylvI1JZsyfi8AdVss7LppUAH5PibjVqZDvVflBRusIPvhba-Uz8jKvSmCY316tg6nj2-CdmseA4cEe3IlAywsqXLk8g-FFWq7Tjyu8ws8YpLYMgu1mhc0";
     /*
     var defaultEvents = [
         {
@@ -17,7 +18,14 @@ $(function(){
         }
     ];
     */
-    // JSON GET API
+    // JSON GET API.
+    $.ajaxSetup({
+        headers :{
+            'Authorization' : 'Bearer '+token,
+            'Accept' : 'application/json'     
+        }
+    });
+
     $.getJSON(baseAPIURL+"events",function(result){
             $("#calendar").fullCalendar({
                 defaultView: 'month',

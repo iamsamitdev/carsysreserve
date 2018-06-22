@@ -12,6 +12,9 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('backend','BackendController@index');
+Route::get('showevents','BackendController@showevents');
+Route::get('addevents','BackendController@addevents');
+
 /*
 |--------------------------------------------------------------------------
 | Backend
@@ -29,6 +32,8 @@ Route::group([
      Route::get('calendars','BackendController@calendars');
      Route::get('bookings','BackendController@bookings');
      Route::get('cardetails','BackendController@cardetails');
+     Route::get('addcar','BackendController@addcar');
+     Route::post('addcarprocess','BackendController@addcarprocess');
 });
 
 

@@ -11,6 +11,7 @@ use Validator;
 class RegisterController extends APIBaseController
 {
     public function register(Request $request){
+
         $validator = Validator::make($request->all(), [
             'fullname' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
